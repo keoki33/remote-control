@@ -1,26 +1,184 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import "./App.css";
+
+class App extends Component {
+  state = {
+    power: true,
+    volume: 1
+  };
+
+  postCommand = (x, value) => {
+    fetch("https://boiling-tundra-71042.herokuapp.com/commands", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        queryResult: { parameters: { [x]: value } }
+      })
+    }).then(resp => resp.json());
+  };
+
+  powerButton = () => {
+    if (this.state.power) {
+      this.postCommand("on", "true");
+      this.setState({ power: false });
+    } else {
+      this.postCommand("on", "false");
+      this.setState({ power: true });
+    }
+  };
+
+  volume = x => {
+    if (x === "up" && this.state.volume < 1) {
+      this.setState({ volume: this.state.volume + 0.1 }, () => {
+        this.postCommand("volume", this.state.volume);
+      });
+    } else if (x === "down" && this.state.volume > 0.1) {
+      this.setState({ volume: this.state.volume - 0.1 }, () => {
+        this.postCommand("volume", this.state.volume);
+      });
+    }
+  };
+
+  render() {
+    return (
+      <div className="card">
+        {console.log(this.state.volume)}
+        <h1>Remote Control</h1>
+        <button
+          className="power"
+          type="button"
+          onClick={event => {
+            this.powerButton();
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          Power
+        </button>
+
+        <button
+          className="closeWindow"
+          type="button"
+          onClick={event => {
+            this.postCommand("close", "false");
+          }}
+        >
+          Close Window
+        </button>
+
+        <button
+          className="showForecast"
+          type="button"
+          onClick={event => {
+            this.postCommand("forecast", "true");
+          }}
+        >
+          Show Forecast
+        </button>
+
+        <button
+          className="showNews"
+          type="button"
+          onClick={event => {
+            this.postCommand("news", "true");
+          }}
+        >
+          Show News
+        </button>
+
+        <button
+          className="emailMe"
+          type="button"
+          onClick={event => {
+            this.postCommand("email", "georgewmail-mirror@yahoo.com");
+          }}
+        >
+          Email Me
+        </button>
+
+        <button
+          className="showCalendar"
+          type="button"
+          onClick={event => {
+            this.postCommand("calendar", "fullcalendarin");
+          }}
+        >
+          Show Calendar
+        </button>
+
+        <button
+          className="youtubeFullscreen"
+          type="button"
+          onClick={event => {
+            this.postCommand("youtubeSize", "videoFull");
+          }}
+        >
+          Youtube Fullscreen
+        </button>
+
+        <button
+          className="playYoutube"
+          type="button"
+          onClick={event => {
+            this.postCommand("youtube", "true");
+          }}
+        >
+          Play Youtube
+        </button>
+
+        <button
+          className="pauseYoutube"
+          type="button"
+          onClick={event => {
+            this.postCommand("youtube", "false");
+          }}
+        >
+          Pause Youtube
+        </button>
+
+        <button
+          className="goToSleep"
+          type="button"
+          onClick={event => {
+            this.postCommand("on", "false");
+          }}
+        >
+          Go To Sleep
+        </button>
+
+        <button
+          className="wakeUp"
+          type="button"
+          onClick={event => {
+            this.postCommand("on", "true");
+          }}
+        >
+          Wake Up
+        </button>
+
+        <button
+          className="volumeUp"
+          type="button"
+          onClick={event => {
+            this.volume("up");
+          }}
+        >
+          +
+        </button>
+
+        <button
+          className="volumeDown"
+          type="button"
+          onClick={event => {
+            this.volume("down");
+          }}
+        >
+          -
+        </button>
+      </div>
+    );
+  }
 }
 
 export default App;
