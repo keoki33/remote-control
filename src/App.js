@@ -30,30 +30,30 @@ class App extends Component {
     }
   };
 
-  volume = x => {
-    if (x === "up" && this.state.volume < 1) {
-      this.setState({ volume: this.state.volume + 0.1 }, () => {
-        this.postCommand("volume", this.state.volume);
-      });
-    } else if (x === "down" && this.state.volume > 0.1) {
-      this.setState({ volume: this.state.volume - 0.1 }, () => {
-        this.postCommand("volume", this.state.volume);
-      });
-    }
-  };
+  // volume = x => {
+  //   if (x === "up" && this.state.volume < 1) {
+  //     this.setState({ volume: this.state.volume + 0.1 }, () => {
+  //       this.postCommand("volume", this.state.volume);
+  //     });
+  //   } else if (x === "down" && this.state.volume > 0.1) {
+  //     this.setState({ volume: this.state.volume - 0.1 }, () => {
+  //       this.postCommand("volume", this.state.volume);
+  //     });
+  //   }
+  // };
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper" onTouchStart="">
         <div className="card">
           {console.log(this.state.volume)}
-          <img
+          {/* <img
             className="remoteimage"
             src={require(`./sony.jpg`)}
             // alt=""
             // width="104"
             // height="34"
-          />
+          /> */}
           <button
             className="power"
             type="button"
@@ -172,29 +172,29 @@ class App extends Component {
               className="volumeUp"
               type="button"
               onClick={event => {
-                this.volume("up");
+                this.postCommand("volume", "false");
               }}
             >
-              +
+              <i class="material-icons">add</i>
             </button>
-
+            <p>Volume</p>
             <button
               className="volumeDown"
               type="button"
               onClick={event => {
-                this.volume("down");
+                this.postCommand("volume", "true");
               }}
             >
-              -
+              <i class="material-icons">remove</i>
             </button>
           </div>
         </div>
         <div className="logo">
-          <h1>SONY</h1>
-          <div>
-            <h3>PERSONAL MIRROR SYSTEM</h3>
-            <h4>MI-RR-3PO</h4>
+          <h1>REFLECTERE</h1>
+          <div className="logo2">
+            <h3 className="logo3">PERSONAL MIRROR SYSTEM</h3>
           </div>
+          <h4>MI-RR-3PO</h4>
         </div>
       </div>
     );
