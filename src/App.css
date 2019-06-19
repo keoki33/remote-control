@@ -176,8 +176,8 @@ button:active {
 
 .flat {
   position: fixed;
-  top: 640px;
-  left: 190px;
+  top: 650px;
+  left: 130px;
   z-index: 1;
 }
 

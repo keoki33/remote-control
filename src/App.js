@@ -235,7 +235,7 @@ class App extends Component {
           <div className="logo2">
             <h3 className="logo3">PERSONAL MIRROR SYSTEM</h3>
           </div>
-          <h4 id="model">MI-RR-3PO</h4>
+          {/* <h4 id="model">MI-RR-3PO</h4> */}
           <img
             className="flat"
             src={require(`./flat.gif`)}
