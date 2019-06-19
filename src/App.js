@@ -168,22 +168,21 @@ class App extends Component {
             Wake Up
           </button>
 
-<button
+          <button
             className="one"
             type="button"
             onClick={event => {
-              this.powerButton();
+              this.postCommand(this.postCommand("videoone", "videoone"));
             }}
           >
             Video One
           </button>
 
-        
           <button
             className="two"
             type="button"
             onClick={event => {
-              this.postCommand("close", "false");
+              this.postCommand(this.postCommand("videotwo", "videotwo"));
             }}
           >
             Video Two
@@ -193,19 +192,17 @@ class App extends Component {
             className="cameraOn"
             type="button"
             onClick={event => {
-              this.powerButton();
+              this.postCommand(this.postCommand("cameraon", "cameraon"));
             }}
           >
             Display Security
           </button>
 
-       
-
           <button
             className="cameraOff"
             type="button"
             onClick={event => {
-              this.postCommand("close", "false");
+              this.postCommand(this.postCommand("cameraoff", "cameraoff"));
             }}
           >
             Close Security
@@ -240,16 +237,14 @@ class App extends Component {
           </div>
           <h4 id="model">MI-RR-3PO</h4>
           <img
-          className="flat"
+            className="flat"
             src={require(`./flat.gif`)}
             alt=""
             width="100"
             height="100"
           />
         </div>
-          
-        </div>
-      
+      </div>
     );
   }
 }

@@ -2,9 +2,9 @@ body {
   padding: 0px;
   margin: 0px;
   background-color: transparent;
-   overflow: hidden; 
-   max-height: fit-content;
-  max-block-size: fit-content; 
+  overflow: hidden;
+  max-height: fit-content;
+  max-block-size: fit-content;
 }
 
 body::-webkit-scrollbar {
@@ -55,7 +55,7 @@ button {
   z-index: 1;
   border-radius: 50%;
   padding: 15px;
-  background-color: #dadada;
+  background-color: #e4e4e4;
 
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.7);
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.7);
@@ -99,7 +99,7 @@ button:active {
   position: absolute;
   border-radius: 50px;
   width: 0px;
-  background-color: #dadada;
+  background-color: #e6e6e6;
   /* width: 10px; */
   height: 70px;
   z-index: 1;
@@ -120,7 +120,7 @@ button:active {
   left: 0px;
   width: 380px;
   line-height: 1.8vh;
-  z-index:2;
+  z-index: 2;
 }
 
 .logo2 {
@@ -130,11 +130,11 @@ button:active {
   margin-left: 40px;
   height: 30px;
   width: 300px;
-  border: 1px solid #bababa;
+  border: 1px solid #e4e4e4;
   color: #616161;
-  background: #bababa;
+  background: #e4e4e4;
   border-radius: 10px;
-  z-index:2;
+  z-index: 2;
 }
 
 .logo3 {
@@ -156,29 +156,32 @@ button:active {
   left: 10px;
 }
 
-.two{
-    position: fixed;
-   top: 470px;
+.two {
+  position: fixed;
+  top: 470px;
   left: 10px;
 }
 
-.cameraOn{  position: fixed;
+.cameraOn {
+  position: fixed;
   top: 370px;
-  left: 223px;}
+  left: 223px;
+}
 
-.cameraOff{  position: fixed;
-   top: 470px;
-  left: 223px;}
+.cameraOff {
+  position: fixed;
+  top: 470px;
+  left: 223px;
+}
 
-
-  .flat{
-    position:fixed;
- top: 640px;
+.flat {
+  position: fixed;
+  top: 640px;
   left: 190px;
   z-index: 1;
-  }
+}
 
-  #model {
-    position: relative;
-    left: -50px;
-  }
+#model {
+  position: relative;
+  left: -50px;
+}
