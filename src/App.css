@@ -121,6 +121,7 @@ button:active {
   width: 380px;
   line-height: 1.8vh;
   z-index: 2;
+  color: #555555;
 }
 
 .logo2 {

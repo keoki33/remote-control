@@ -89,6 +89,16 @@ class App extends Component {
           </button>
 
           <button
+            className="showCalendar"
+            type="button"
+            onClick={event => {
+              this.postCommand("calendar", "fullcalendarin");
+            }}
+          >
+            Show Calendar
+          </button>
+
+          <button
             className="showNews"
             type="button"
             onClick={event => {
@@ -109,26 +119,6 @@ class App extends Component {
           </button>
 
           <button
-            className="showCalendar"
-            type="button"
-            onClick={event => {
-              this.postCommand("calendar", "fullcalendarin");
-            }}
-          >
-            Show Calendar
-          </button>
-
-          <button
-            className="youtubeFullscreen"
-            type="button"
-            onClick={event => {
-              this.postCommand("youtubeSize", "videoFull");
-            }}
-          >
-            Youtube Fullscreen
-          </button>
-
-          <button
             className="playYoutube"
             type="button"
             onClick={event => {
@@ -146,6 +136,16 @@ class App extends Component {
             }}
           >
             Pause Youtube
+          </button>
+
+          <button
+            className="youtubeFullscreen"
+            type="button"
+            onClick={event => {
+              this.postCommand("youtubeSize", "videoFull");
+            }}
+          >
+            Youtube Fullscreen
           </button>
 
           <button
@@ -175,7 +175,7 @@ class App extends Component {
               this.postCommand(this.postCommand("videoone", "videoone"));
             }}
           >
-            Video One
+            Previous Video
           </button>
 
           <button
@@ -185,7 +185,7 @@ class App extends Component {
               this.postCommand(this.postCommand("videotwo", "videotwo"));
             }}
           >
-            Video Two
+            Next Video
           </button>
 
           <button
