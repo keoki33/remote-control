@@ -167,6 +167,50 @@ class App extends Component {
           >
             Wake Up
           </button>
+
+<button
+            className="one"
+            type="button"
+            onClick={event => {
+              this.powerButton();
+            }}
+          >
+            Video One
+          </button>
+
+        
+          <button
+            className="two"
+            type="button"
+            onClick={event => {
+              this.postCommand("close", "false");
+            }}
+          >
+            Video Two
+          </button>
+
+          <button
+            className="cameraOn"
+            type="button"
+            onClick={event => {
+              this.powerButton();
+            }}
+          >
+            Display Security
+          </button>
+
+       
+
+          <button
+            className="cameraOff"
+            type="button"
+            onClick={event => {
+              this.postCommand("close", "false");
+            }}
+          >
+            Close Security
+          </button>
+
           <div className="volume">
             <button
               className="volumeUp"
@@ -194,9 +238,18 @@ class App extends Component {
           <div className="logo2">
             <h3 className="logo3">PERSONAL MIRROR SYSTEM</h3>
           </div>
-          <h4>MI-RR-3PO</h4>
+          <h4 id="model">MI-RR-3PO</h4>
+          <img
+          className="flat"
+            src={require(`./flat.gif`)}
+            alt=""
+            width="100"
+            height="100"
+          />
         </div>
-      </div>
+          
+        </div>
+      
     );
   }
 }
