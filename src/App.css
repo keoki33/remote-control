@@ -54,7 +54,7 @@ button {
   height: 75px;
   z-index: 1;
   border-radius: 50%;
-  padding: 15px;
+  padding: 6px;
   background-color: #e4e4e4;
 
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.7);
