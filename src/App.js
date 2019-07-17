@@ -42,9 +42,14 @@ class App extends Component {
   //   }
   // };
 
+  componentDidMount () {
+    alert("On Mirror Website: 1. Click on Flatiron Icon and 2. Pause Youtube Video on first load or screen refresh to allow controls to work. All commands take 1-2 seconds to take effect")
+  }
+
   render() {
     return (
       <div className="wrapper" onTouchStart="">
+        
         <div className="card">
           {console.log(this.state.volume)}
           {/* <img
@@ -244,6 +249,7 @@ class App extends Component {
             height="100"
           />
         </div>
+      
       </div>
     );
   }
