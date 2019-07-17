@@ -43,7 +43,7 @@ class App extends Component {
   // };
 
   componentDidMount () {
-    alert("On Mirror Website: 1. Click on Flatiron Icon and 2. Pause Youtube Video on first load or screen refresh to allow controls to work. All commands take 1-2 seconds to take effect")
+    alert("On Mirror Website: 1. Click on Flatiron Icon and 2. Pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Note: All commands take 1-2 seconds to take effect. Thank you for trying my site")
   }
 
   render() {
