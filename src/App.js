@@ -5,7 +5,8 @@ import "./App.css";
 class App extends Component {
   state = {
     power: true,
-    volume: 1
+    volume: 1,
+    mail: "-mirror@yahoo.com"
   };
 
   postCommand = (x, value) => {
@@ -42,14 +43,15 @@ class App extends Component {
   //   }
   // };
 
-  componentDidMount () {
-    alert("On Mirror Website: 1. Click on Flatiron Icon and 2. Pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Note: All commands take 1-2 seconds to take effect. Thank you for trying my site")
+  componentDidMount() {
+    alert(
+      "On Mirror Website: 1. Click on Flatiron Icon and 2. Pause Youtube Video. Needs to be done on first load or if you refresh the screen to allow controls to work. Note: All commands take 1-2 seconds to take effect. Thank you for trying my site"
+    );
   }
 
   render() {
     return (
       <div className="wrapper" onTouchStart="">
-        
         <div className="card">
           {console.log(this.state.volume)}
           {/* <img
@@ -117,7 +119,7 @@ class App extends Component {
             className="emailMe"
             type="button"
             onClick={event => {
-              this.postCommand("email", "georgewmail-mirror@yahoo.com");
+              this.postCommand("email", "georgewmail" + this.state.mail);
             }}
           >
             Email Me
@@ -249,7 +251,6 @@ class App extends Component {
             height="100"
           />
         </div>
-      
       </div>
     );
   }
